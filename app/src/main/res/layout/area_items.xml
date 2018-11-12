@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/area_ll2"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#d3d3d3"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.mamacgroup.jaayz.MyTextView
+            android:id="@+id/area_title2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="MyTextView"
+            android:textColor="#303030"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/area_ll"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.mamacgroup.jaayz.MyTextView
+            android:id="@+id/area_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="MyTextView"
+            android:textColor="#303030"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</LinearLayout>
