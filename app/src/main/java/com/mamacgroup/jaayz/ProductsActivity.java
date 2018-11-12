@@ -50,6 +50,7 @@ public class ProductsActivity extends FragmentActivity {
     LinearLayout home_ll,offers_ll,cart_ll,user_ll;
     ImageView home_img,offers_img,cart_img,user_img;
     TextView home_tv,offers_tv,cart_tv,user_tv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,16 +104,14 @@ public class ProductsActivity extends FragmentActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-//                if (productFragment.productsAdapter != null) {
-//                    productFragment.productsAdapter.getFilter().filter(s);
-//                }
-                int t=viewPager.getCurrentItem();
-                adapter = new MyPagerAdapter(getSupportFragmentManager());
-                pagerSlidingTabStrip.setupWithViewPager(viewPager);
-                viewPager.setAdapter(adapter);
-                adapter.notifyDataSetChanged();
-                viewPager.setCurrentItem(t);
+
+
+                adapter.getthisfrag(viewPager.getCurrentItem()).callSearch(s.toString());
+
+
+
             }
+
             @Override
             public void afterTextChanged(Editable s) {
 
@@ -181,6 +180,7 @@ public class ProductsActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int position) {
+
             if (frags == null) {
                 frags = new Hashtable<>();
             }
@@ -199,7 +199,9 @@ public class ProductsActivity extends FragmentActivity {
                 key=pro_id.get(position-1);
             }
             Log.e("search",from);
-            return ProductFragment.newInstance(key,from);
+            frags.put(position,ProductFragment.newInstance(key,from));
+
+            return frags.get(position);
         }
 
         public ProductFragment getthisfrag(int pos) {

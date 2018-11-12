@@ -134,4 +134,12 @@ public class ProductFragment extends Fragment {
 // Access the RequestQueue through your singleton class.
         AppController.getInstance().addToRequestQueue(jsObjRequest);
     }
+
+
+    public void callSearch(String string){
+
+        Log.e(id,string);
+
+
+    }
 }
